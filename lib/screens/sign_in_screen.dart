@@ -2,7 +2,6 @@ import 'package:api_test/cubit/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:api_test/cubit/user_cubit.dart';
-import 'package:api_test/screens/profile_screen.dart';
 import 'package:api_test/widgets/custom_form_button.dart';
 import 'package:api_test/widgets/custom_input_field.dart';
 import 'package:api_test/widgets/dont_have_an_account.dart';

@@ -8,15 +8,15 @@ class CustomInputField extends StatefulWidget {
   final bool obscureText;
   final TextEditingController? controller;
 
-  const CustomInputField(
-      {Key? key,
-      required this.labelText,
-      required this.hintText,
-      this.suffixIcon = false,
-      this.isDense,
-      this.obscureText = false,
-      this.controller})
-      : super(key: key);
+  const CustomInputField({
+    super.key,
+    required this.labelText,
+    required this.hintText,
+    this.suffixIcon = false,
+    this.isDense,
+    this.obscureText = false,
+    this.controller,
+  });
 
   @override
   State<CustomInputField> createState() => _CustomInputFieldState();
@@ -29,20 +29,28 @@ class _CustomInputFieldState extends State<CustomInputField> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.9,
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 3,
+      ),
       child: Column(
         children: [
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
               widget.labelText,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           TextFormField(
             obscureText: (widget.obscureText && _obscureText),
             decoration: InputDecoration(
-              isDense: (widget.isDense != null) ? widget.isDense : false,
+              isDense: (widget.isDense != null)
+                  ? widget.isDense
+                  : false,
               hintText: widget.hintText,
               suffixIcon: widget.suffixIcon
                   ? IconButton(
